@@ -1,36 +1,61 @@
 <!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="The first page of the PKN website." />
-    <title>Hello world | PKN</title>
-    <style>
-      * { box-sizing: border-box; }
-      body {
-        margin: 0;
-        min-height: 100vh;
-        display: grid;
-        place-items: center;
-        padding: 24px;
-        background: #f4f3ed;
-        color: #173c31;
-        font-family: system-ui, sans-serif;
-      }
-      main { width: min(100%, 720px); }
-      .label { font-size: 14px; font-weight: 700; letter-spacing: .18em; }
-      h1 { margin: 24px 0; font-size: clamp(52px, 12vw, 100px); line-height: 1; letter-spacing: -.06em; }
-      p { max-width: 480px; font-size: 20px; line-height: 1.6; }
-      .status { display: inline-flex; align-items: center; gap: 10px; margin-top: 32px; font-size: 14px; }
-      .status::before { content: ""; width: 10px; height: 10px; border-radius: 50%; background: #287a50; }
-    </style>
-  </head>
-  <body>
-    <main>
-      <span class="label">PKN / FIRST PAGE</span>
-      <h1>Hello world.</h1>
-      <p>Every website starts somewhere. This is ours.</p>
-      <span class="status">Your test page is working.</span>
-    </main>
-  </body>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#8d3175">
+  <title>PKN</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <!-- Empty visual template. Replace decorative slots with content when ready. -->
+  <header class="site-header" aria-label="Website header">
+    <div class="identity" aria-hidden="true"><span class="brand-slot"></span><div class="brand-lines"><i></i><i></i></div></div>
+    <div class="tagline-slot" aria-hidden="true"><i></i><i></i></div>
+    <div class="navigation-slots" aria-hidden="true">
+      <span><i></i><b class="chevron"></b></span><span><i></i><b class="chevron"></b></span><span><i></i><b class="chevron"></b></span>
+    </div>
+  </header>
+  <div class="curve curve-top" aria-hidden="true"></div>
+  <main aria-label="Empty website template">
+    <section class="hero wrap" aria-label="Featured content area">
+      <div class="welcome" aria-hidden="true">
+        <div class="heading-slot"></div>
+        <div class="search-slot"><span class="search-circle"><svg viewBox="0 0 32 32"><circle cx="13" cy="13" r="9"/><path d="m20 20 8 8"/></svg></span></div>
+      </div>
+      <div class="hero-slot" aria-hidden="true"><span class="hero-caption"><i></i><i></i></span><span class="arrow"></span></div>
+    </section>
+    <section class="content-grid wrap" aria-label="Content areas">
+      <div class="panel" aria-hidden="true">
+        <div class="section-heading"></div>
+        <div class="content-row"><span class="thumbnail tone-1"></span><span class="lines"><i></i><i></i></span></div>
+        <div class="content-row"><span class="thumbnail tone-2"></span><span class="lines"><i></i><i></i></span></div>
+        <div class="content-row"><span class="thumbnail tone-3"></span><span class="lines"><i></i><i></i></span></div>
+        <div class="content-row"><span class="thumbnail tone-4"></span><span class="lines"><i></i><i></i></span></div>
+        <div class="content-row"><span class="thumbnail tone-5"></span><span class="lines"><i></i><i></i></span></div>
+        <div class="panel-bottom"><i></i><span class="chevron"></span></div>
+      </div>
+      <div class="panel" aria-hidden="true">
+        <div class="section-heading wide"></div>
+        <div class="content-row"><span class="thumbnail tone-3"></span><span class="lines"><i></i><i></i></span></div>
+        <div class="content-row"><span class="thumbnail tone-5"></span><span class="lines"><i></i><i></i></span></div>
+        <div class="content-row"><span class="thumbnail tone-1"></span><span class="lines"><i></i><i></i></span></div>
+        <div class="content-row"><span class="thumbnail tone-2"></span><span class="lines"><i></i><i></i></span></div>
+        <div class="content-row"><span class="thumbnail tone-4"></span><span class="lines"><i></i><i></i></span></div>
+        <div class="panel-bottom"><i></i><span class="chevron"></span></div>
+      </div>
+      <div class="feature-stack" aria-hidden="true">
+        <div class="feature"><span class="feature-icon orange"></span><i></i><span class="arrow"></span></div>
+        <div class="feature"><span class="feature-icon"></span><i></i><span class="arrow"></span></div>
+        <div class="feature"><span class="feature-icon"></span><i></i><span class="arrow"></span></div>
+        <div class="feature"><span class="feature-icon"></span><i></i><span class="arrow"></span></div>
+        <div class="feature featured"><svg viewBox="0 0 32 32"><path d="M16 28 3 15C-5 5 9-3 16 7c7-10 21-2 13 8Z"/></svg><i></i><span class="arrow"></span></div>
+      </div>
+    </section>
+  </main>
+  <div class="curve curve-bottom" aria-hidden="true"></div>
+  <footer class="site-footer" aria-label="Footer content area">
+    <div class="footer-slots" aria-hidden="true"><div class="section-heading"></div><i></i><i></i><i></i><span class="footer-pill"></span><div class="social-slots"><b></b><b></b><b></b></div><span class="brand-slot"></span></div>
+  </footer>
+</body>
 </html>
