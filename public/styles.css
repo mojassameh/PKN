@@ -60,3 +60,17 @@ i { display: block; border-radius: 8px; background: var(--slot); }
 @media (min-width: 1440px) { .hero { padding-top: 10px; } }
 @media (max-width: 1000px) { .wrap { width: calc(100% - 48px); }.hero { grid-template-columns: 36% 1fr; gap: 24px; }.hero-slot { height: 310px; }.content-grid { gap: 18px; grid-template-columns: 1fr 1fr; }.feature-stack { grid-column: 1 / -1; grid-template-columns: repeat(2, 1fr); grid-template-rows: auto; }.feature:last-child { grid-column: 1 / -1; }.feature { min-height: 85px; } }
 @media (max-width: 600px) { .wrap { width: calc(100% - 36px); }.site-header { height: 130px; padding: 18px; }.brand-slot { width: 45px; height: 45px; }.brand-lines i { width: 105px; }.tagline-slot { display: none; }.navigation-slots { justify-content: space-between; gap: 16px; margin-top: 25px; }.navigation-slots i { width: 60px; }.curve { height: 42px; border-top-left-radius: 160px 100%; }.hero { grid-template-columns: 1fr; gap: 36px; }.welcome { padding: 12px 0 0; }.heading-slot { width: 48%; height: 22px; margin-bottom: 25px; }.search-slot { width: 100%; }.search-circle { width: 58px; height: 58px; top: -6px; }.hero-slot { height: 240px; }.content-grid { margin-top: 42px; margin-bottom: 44px; grid-template-columns: 1fr; gap: 24px; }.panel { padding: 26px 24px; }.feature-stack { grid-column: auto; grid-template-columns: 1fr; }.feature:last-child { grid-column: auto; }.site-footer { padding-top: 32px; } }
+
+/* Site identity supplied by the owner. */
+.identity { width: fit-content; max-width: calc(100% - 170px); color: var(--plum); text-decoration: none; }
+.identity:focus-visible { outline: 2px solid var(--plum); outline-offset: 5px; border-radius: 4px; }
+.site-logo { display: block; width: 64px; height: 64px; object-fit: contain; flex-shrink: 0; border-radius: 50%; }
+.site-name { font-size: 22px; font-weight: 650; line-height: 1.15; }
+.site-name > span { color: #b96c13; }
+.footer-logo { width: 80px; height: 80px; }
+@media (max-width: 600px) {
+  .identity { max-width: 100%; gap: 10px; }
+  .site-logo { width: 48px; height: 48px; }
+  .site-name { font-size: clamp(14px, 3.8vw, 20px); }
+  .footer-logo { width: 80px; height: 80px; }
+}
