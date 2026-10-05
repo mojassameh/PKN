@@ -82,3 +82,19 @@ i { display: block; border-radius: 8px; background: var(--slot); }
 .disclaimer p:not(.disclaimer-label) { max-width: 950px; margin: 14px 0 0; font-size: 16px; line-height: 1.7; }
 .disclaimer a { color: var(--plum); text-underline-offset: 3px; overflow-wrap: anywhere; }
 .disclaimer a:focus-visible { outline: 2px solid var(--plum); outline-offset: 4px; }
+/* Language links work without JavaScript and keep each translation addressable. */
+.site-header { height: auto; min-height: 130px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; }
+.identity { max-width: 100%; }
+.language-switcher { display: flex; flex-wrap: wrap; gap: 6px; }
+.language-switcher a { display: inline-flex; align-items: center; gap: 7px; min-height: 44px; padding: 8px 10px; border: 1px solid transparent; border-radius: 8px; color: var(--muted); font-size: 14px; text-decoration: none; }
+.language-switcher img { object-fit: contain; border-radius: 2px; }
+.language-switcher a[aria-current="page"] { background: white; border-color: var(--line); color: var(--plum); font-weight: 650; }
+.language-switcher a:hover { background: #eee6ec; }
+.language-switcher a:focus-visible { outline: 2px solid var(--plum); outline-offset: 2px; }
+.navigation-slots { width: 100%; margin-top: 0; margin-bottom: 8px; }
+[dir="rtl"] body { font-family: Tahoma, Arial, sans-serif; }
+[dir="rtl"] .disclaimer { border-left: 1px solid var(--line); border-right: 4px solid var(--plum); text-align: right; }
+[dir="rtl"] .disclaimer-label { letter-spacing: normal; }
+[dir="rtl"] .disclaimer p { line-height: 2; }
+[dir="rtl"] .site-name { line-height: 1.5; }
+@media (max-width: 600px) { .site-header { gap: 18px; }.language-switcher { width: 100%; justify-content: center; }.language-switcher a { padding: 8px; }.navigation-slots { margin-top: 0; } }
