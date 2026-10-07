@@ -122,3 +122,5 @@ i { display: block; border-radius: 8px; background: var(--slot); }
 [dir="rtl"] .story-eyebrow { letter-spacing: 0; }
 @media (max-width: 900px) { .story-featured { grid-template-columns: 1fr; }.story-featured-copy { padding: 32px; }.story-featured-image { max-height: none; }.story-grid { gap: 16px; }.story-card-copy { padding: 20px; } }
 @media (max-width: 600px) { .stories { margin-block: 40px 50px; }.story-grid { grid-template-columns: 1fr; }.story-featured-copy { padding: 26px; }.story-featured h3 { font-size: 29px; } }
+
+.story-card-image { display: block; width: 100%; height: auto; }

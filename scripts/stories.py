@@ -5,10 +5,19 @@ COPY = {
  'en': {'heading':'My stories', 'eyebrow':'A personal perspective', 'title':'The church that tells David’s story has itself become Goliath', 'alt':'Symbolic illustration of David holding a sling as he faces the giant Goliath.', 'pending':'The text of this story is coming soon.', 'next':'More stories', 'soon':'Coming soon', 'slot':'Story', 'summary':'A new story will appear here soon.', 'image':'Image to follow'},
  'fa': {'heading':'روایت‌های من', 'eyebrow':'از نگاه من', 'title':'کلیسایی که داستان داوود را روایت می‌کند، خود به جالوت بدل شده است', 'alt':'تصویری نمادین از داوود با فلاخن در برابر جالوت غول‌پیکر.', 'pending':'متن این روایت به‌زودی منتشر خواهد شد.', 'next':'روایت‌های بیشتر', 'soon':'به‌زودی', 'slot':'روایت', 'summary':'به‌زودی روایت تازه‌ای در این بخش منتشر خواهد شد.', 'image':'تصویر به‌زودی اضافه می‌شود'}
 }
+SECOND_STORY = {
+ 'nl': {'title': 'De PKN verspreidt een boodschap van haat en discriminatie', 'alt': 'Symbolische afbeelding van een kerk met een spandoek waarop in drie talen staat: u bent niet welkom.'},
+ 'en': {'title': 'The PKN spreads a message of hate and discrimination', 'alt': 'Symbolic image of a church with a banner stating in three languages: you are not welcome.'},
+ 'fa': {'title': 'کلیسای پروتستان در هلند (PKN) پیام نفرت و تبعیض را ترویج می‌کند', 'alt': 'تصویری نمادین از یک کلیسا با پارچه‌نوشته‌ای که به سه زبان می‌گوید: شما خوش‌آمد نیستید.'}
+}
 def render_stories(lang):
  d=COPY[lang]
- cards=[]
- for number in range(2,5):
+ second=SECOND_STORY[lang]
+ cards=[f'''<article class="story-card" aria-labelledby="story-2-title">
+        <img class="story-card-image" src="/assets/hate-and-discrimination.png" width="1536" height="1024" alt="{escape(second['alt'], quote=True)}" loading="lazy">
+        <div class="story-card-copy"><p class="story-eyebrow">{d['eyebrow']}</p><h3 id="story-2-title">{second['title']}</h3><p>{d['pending']}</p></div>
+      </article>''']
+ for number in range(3,5):
   n=str(number) if lang!='fa' else str(number).translate(str.maketrans('0123456789','۰۱۲۳۴۵۶۷۸۹'))
   cards.append(f'''<article class="story-card" aria-labelledby="story-{number}-title">
         <div class="story-image-placeholder" role="img" aria-label="{d['image']}"><span aria-hidden="true">{n.zfill(2) if lang!='fa' else n}</span></div>
