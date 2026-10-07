@@ -2,8 +2,13 @@
 from pathlib import Path
 import re
 from html import escape
+from stories import render_stories
 ROOT=Path(__file__).resolve().parents[1]
 base=(ROOT/'public/index.html').read_text()
+def insert_stories(page, lang):
+ return re.sub(r'<!-- STORIES START -->.*?<!-- STORIES END -->', lambda m: '<!-- STORIES START -->\n'+render_stories(lang)+'\n    <!-- STORIES END -->', page, flags=re.S)
+base=insert_stories(base, 'nl')
+(ROOT/'public/index.html').write_text(base)
 data={
 'en': {
 'name':'The Real Protestant Church in the Netherlands', 'brand':'The Real Protestant Church<br><span>in the Netherlands</span>',
@@ -49,5 +54,6 @@ for lang,d in data.items():
       <p>{d['official']} <a href="https://protestantsekerk.nl/" dir="ltr">protestantsekerk.nl</a>.</p>
     </section>'''
  s=re.sub(r'<section class="disclaimer wrap".*?</section>',lambda m:section,s,flags=re.S)
+ s=insert_stories(s, lang)
  path=ROOT/'public'/lang/'index.html'; path.parent.mkdir(exist_ok=True); path.write_text(s)
 print('Generated English and Farsi pages.')
